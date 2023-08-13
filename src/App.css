@@ -37,3 +37,88 @@
 .naves {
   color:white; 
 }
+
+.listanaves {
+  color:white;
+  background-color:rgba(255,255,255,0.1);
+  padding:1% 12% 1% 12%;
+  list-style-type: none;
+}
+
+.mainnaves {
+  color:white;
+}
+
+.loading{
+  text-align:center!important;
+  font-size:45px;
+  margin-top:5%;
+}
+
+.botoninfo {
+  padding:0.5% 5% 0.5% 5%;
+  border-radius:5px;
+  background-color:gainsboro;
+  font-size:18px;
+  margin-top:1%;
+  margin-bottom:1%;
+  border:none;
+}
+
+.pages {
+  display:flex;
+  justify-content:center;
+}
+
+.pages button {
+  background-color:rgba(255,255,255,0);
+  color:white;
+  font-size:18px;
+  border:none;
+  padding:1% 2% 1% 2%;
+}
+
+.pages button:hover {  
+  color:lightskyblue;
+  cursor:pointer;
+}
+
+.modalbackground {
+  width:100vw;
+  overflow-x:hidden;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  position:fixed;
+  display:flex;
+  justify-content:center;
+  align-items:top;
+  padding-top:2%;
+}
+
+.modalcontainer {
+  width:60vw;
+  height:50vh;
+  border-radius: 5px;
+  background-image:url("./img/space.jpg");
+  box-shadow:rgba(0,0,0,0.9) 0px 5px 15px;
+  padding:25px;
+
+
+}
+
+.closebutton {
+  display:flex;
+  justify-content:flex-end!important;
+}
+
+.closebutton button {
+  background-color:white;
+  border-radius:5px;
+  border:none;
+  font-size:20px;
+  cursor:pointer;
+  color:black;
+  padding:5px 10px 5px 10px;
+
+}
+
