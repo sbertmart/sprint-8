@@ -13,7 +13,7 @@ const Naves = () => {
     const [modal, setModal] = useState(false);
 
     class Nave {
-      constructor(name,model,starship_class,manufacturer,cost_in_credits,crew,passengers,cargo_capacity,consumables,length,max_atmosphering_speed,hyperdrive_rating,MGLT,pilots) {
+      constructor(name, model, starship_class, manufacturer, cost_in_credits, crew, passengers, cargo_capacity, consumables, length, max_atmosphering_speed, hyperdrive_rating, MGLT, pilots, url, image) {
         this.name = name;
         this.model = model;
         this.starship_class = starship_class;
@@ -28,8 +28,10 @@ const Naves = () => {
         this.hyperdrive_rating =hyperdrive_rating;
         this.MGLT=MGLT;
         this.pilots = pilots;
-
-      }
+        this.url = url;
+        this.image = image;
+        this.pilots = pilots;
+        }
     }
   
     useEffect(() => {
@@ -37,7 +39,7 @@ const Naves = () => {
       .then(res => {
         setCount(Math.ceil((res.data.count/10)));
         let naves = [];
-        res.data.results.map((nave) => {naves.push(new Nave(nave.name, nave.model, nave.starship_class, nave.manufacturer, nave.cost_in_credits, nave.crew, nave.passengers, nave.cargo_capacity, nave.consumables, nave.length, nave.max_atmosphering_speed, nave.hyperdrive_rating, nave.MGLT, nave.pilots))});
+        res.data.results.map((nave) => {naves.push(new Nave(nave.name, nave.model, nave.starship_class, nave.manufacturer, nave.cost_in_credits, nave.crew, nave.passengers, nave.cargo_capacity, nave.consumables, nave.length, nave.max_atmosphering_speed, nave.hyperdrive_rating, nave.MGLT, nave.pilots, nave.url,  "https://starwars-visualguide.com/assets/img/starships/"+ nave.url.replace(/[\D]/g, '') + ".jpg"))});
         setDatos(naves);
         })
       .finally(() => {setLoading(false)});    
@@ -48,18 +50,19 @@ const Naves = () => {
       setFicha(datos.filter(nave => nave.name === nombreNave));
       setModal(true);
     }
-
-    console.log(datos);
-    console.log(count);
   
 
     return (
     <div>
+      {modal && <FichaNave 
+                  cerrar={setModal} 
+                  nave={ficha}
+                  />}
       <div className="mainnaves">
-        {modal && <FichaNave cerrar={setModal} datos={ficha}/>}
         {loading && <div className="loading"><h3>Loading...</h3></div>}
         {datos.map((naves) => (<ul className="listanaves"><li>Name: {naves.name}</li><li>Model: {naves.model}</li><button onClick={()=>{getData(naves.name)}} className="botoninfo">More info</button></ul>
         ))}
+        
       </div>
       {!loading &&
       <div className="pages">

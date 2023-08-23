@@ -2,6 +2,40 @@
   text-align: center;
 }
 
+.headerstarwars {
+  background-color:black;
+  position:sticky;
+  top:0;
+}
+
+.submitbutton {cursor:pointer;
+width:50%;
+background-color:#F2D24E;
+border:none;
+color:black;
+font-family:poppins;
+font-size:20px;
+padding:10px 10px 10px 10px;
+border-radius:20px;
+margin-top:20px;}
+
+.accessbutton {cursor:pointer;
+  width:100%;
+  background-color:black;
+  border:none;
+  color:white;
+  font-family:poppins;
+  font-size:20px;
+  padding:10px 10px 10px 10px;
+  border-radius:20px;
+  margin-top:20px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+p {font-family:poppins; font-weight:400;}
+a {font-family:poppins; font-weight:400;}
+
 
 .menu {
   display:flex;
@@ -21,6 +55,7 @@
   text-transform:uppercase;
   border-bottom:3px solid rgba(255, 255, 255, 0);
   border-top:3px solid rgba(255, 255, 255, 0);
+  font-family:poppins;
 }
 
 .menuitems:hover {
@@ -43,16 +78,20 @@
   background-color:rgba(255,255,255,0.1);
   padding:1% 12% 1% 12%;
   list-style-type: none;
+  font-family:poppins;
 }
 
 .mainnaves {
   color:white;
+  width:60%;
+  margin:auto;
 }
 
 .loading{
   text-align:center!important;
   font-size:45px;
   margin-top:5%;
+  font-family:poppins;
 }
 
 .botoninfo {
@@ -63,11 +102,14 @@
   margin-top:1%;
   margin-bottom:1%;
   border:none;
+  font-family:poppins;
+  cursor:pointer;
 }
 
 .pages {
   display:flex;
   justify-content:center;
+  font-family:poppins;
 }
 
 .pages button {
@@ -93,17 +135,76 @@
   justify-content:center;
   align-items:top;
   padding-top:2%;
+  padding-bottom:2%;
+  margin-top:-90px;
 }
 
 .modalcontainer {
-  width:60vw;
-  height:50vh;
-  border-radius: 5px;
+  width:90%;
+  height:50%;
+  border-radius: 25px;
   background-image:url("./img/space.jpg");
+  background-size:cover;
   box-shadow:rgba(0,0,0,0.9) 0px 5px 15px;
   padding:25px;
+  border:5px solid white;
 
 
+}
+
+.modalsigncontainer {
+  width:30%;
+  height:50%;
+  border-radius: 20px;
+  background-color:white;
+  box-shadow:rgba(0,0,0,0.9) 0px 5px 15px;
+  padding:3% 3% 3% 3%;
+  display:block;
+  z-index:999999;
+  margin-top:0px;
+
+}
+
+.error {
+  color:red;
+  margin-top:5px;
+}
+
+.success {
+  color:green;
+  margin-top:5px;
+}
+
+.modalsigncontainer label {
+  color:black;
+  font-size:20px;
+}
+
+.modalsigncontainer input {
+  margin-top:5px;
+  font-size:22px;
+  padding:5px;
+  width:95%;
+  background-color:rgba(0,0,0,0.1);
+  border-radius:5px;
+  border:2px solid lightgray;
+}
+
+.modalsigncontainer h2 {
+  font-size:40px;
+  color:rgba(0,0,0,0.9);
+  margin-top:-20px;
+  margin-bottom:0px;
+}
+
+.sign {color:black;}
+
+.sign button {color:black; background-color:transparent; border:none; font-size:20px; font-weight:bold; cursor:pointer;}
+
+label {font-family:poppins;}
+
+.field {
+  margin-top:2%;
 }
 
 .closebutton {
@@ -120,5 +221,86 @@
   color:black;
   padding:5px 10px 5px 10px;
 
+}
+
+.info {
+  color:white;
+}
+
+.info h1 {
+  text-align:center;
+  margin:0 0 2% 0;
+  font-family:poppins;
+  text-transform:uppercase;
+}
+
+.imageinfo {
+  display:flex;
+}
+
+.imageinfo > div{
+  width:33%;
+  padding:0 2% 0 2%;
+}
+
+.infonave {
+  font-family:poppins;
+  font-size:18px;
+  list-style:none;
+}
+
+.fotospilotos {
+  display:flex;
+  column-gap:5px;
+  padding-left:30px;
+  padding-right:30px;
+}
+
+.fotospilotos img {
+max-width:70px;
+}
+
+.home {
+  color:white;
+  text-align:center;
+  text-transform:uppercase;
+  font-size:35px;
+  padding-top:5%;
+  background-image:url("./img/space.jpg");
+  background-size:cover;
+  height:100vh;
+}
+
+.home h2{
+  margin:-2%;
+}
+
+.lateral {width:25%; padding:5%; color:white; text-align:right;}
+.starwarslogo {width:50%;}
+.headerstarwars {display:flex;}
+
+.lateral button{background-color:rgba(0,0,0,0); font-size:18px; color:white; border:none; cursor:pointer;}
+
+@media (max-width:1100px) {
+  .imageinfo {
+    display:block;
+  }
+  .imageinfo > div {
+    width:100%;
+  }
+  .modalcontainer {
+    height:150vh;
+    width:100vw;
+    position:relative;
+  }
+
+  .modalbackground {
+    overflow-y:scroll;
+    height:150vh;
+  }
+
+  .imageinfo img {
+    width:80vw;
+  }
 }
 
